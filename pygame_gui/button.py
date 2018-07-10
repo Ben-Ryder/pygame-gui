@@ -1,5 +1,4 @@
 import pygame
-from pygame_gui.text import *
 from pygame_gui.image import *
 
 class button:
