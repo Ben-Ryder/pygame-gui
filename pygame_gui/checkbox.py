@@ -6,10 +6,10 @@ import pygame_gui.image
 
 class Checkbox:
     def __init__(self, rest_image, hover_image, active_image, active_hover_image):
-        self.rest_image = pygame_gui.image(rest_image)
-        self.hover_image = pygame_gui.image(hover_image)
-        self.active_image = pygame_gui.image(active_image)
-        self.active_hover_image = pygame_gui.image(active_hover_image)
+        self.rest_image = pygame_gui.Image(rest_image)
+        self.hover_image = pygame_gui.Image(hover_image)
+        self.active_image = pygame_gui.Image(active_image)
+        self.active_hover_image = pygame_gui.Image(active_hover_image)
         self.rect = self.rest_image.image.get_rect()
         self.active = False
 

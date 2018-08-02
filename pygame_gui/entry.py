@@ -8,9 +8,9 @@ import pygame_gui.image
 class Entry:
     def __init__(self, background_image,
                  initial_text, text_size, text_colour, text_font=None, text_padx=0, text_pady=0, sticky=False):
-        self.background_image = pygame_gui.image(background_image)
+        self.background_image = pygame_gui.Image(background_image)
         self.rect = self.background_image.image.get_rect()
-        self.text = pygame_gui.text(initial_text, text_size, text_colour, text_font)
+        self.text = pygame_gui.Text(initial_text, text_size, text_colour, text_font)
         self.text_padx = text_padx
         self.text_pady = text_pady
         self.active = False

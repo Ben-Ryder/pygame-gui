@@ -6,8 +6,8 @@ import pygame_gui.image
 
 class Button:
     def __init__(self, rest_image, hover_image):
-        self.rest_image = pygame_gui.image(rest_image)
-        self.hover_image = pygame_gui.image(hover_image)
+        self.rest_image = pygame_gui.Image(rest_image)
+        self.hover_image = pygame_gui.Image(hover_image)
         self.rect = self.rest_image.image.get_rect()
         self.function = None
 
