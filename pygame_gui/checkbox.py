@@ -1,14 +1,15 @@
 # Ben-Ryder 2018
 
 import pygame
-from pygame_gui.image import *
+import pygame_gui.image
 
-class checkbox:
-    def __init__(self,rest_image,hover_image,active_image,active_hover_image):
-        self.rest_image = image(rest_image)
-        self.hover_image = image(hover_image)
-        self.active_image = image(active_image)
-        self.active_hover_image = image(active_hover_image)
+
+class Checkbox:
+    def __init__(self, rest_image, hover_image, active_image, active_hover_image):
+        self.rest_image = pygame_gui.image(rest_image)
+        self.hover_image = pygame_gui.image(hover_image)
+        self.active_image = pygame_gui.image(active_image)
+        self.active_hover_image = pygame_gui.image(active_hover_image)
         self.rect = self.rest_image.image.get_rect()
         self.active = False
 
@@ -23,15 +24,15 @@ class checkbox:
             return True
         return False
     
-    def draw(self,display,x,y):
-        self.rect[0],self.rect[1] = x,y
+    def draw(self, display, x, y):
+        self.rect[0], self.rect[1] = x, y
         if self.mouse_over():
             if self.active:
-                self.active_hover_image.draw(display,x,y)
+                self.active_hover_image.draw(display, x, y)
             else:
-                self.hover_image.draw(display,x,y)
+                self.hover_image.draw(display, x, y)
         else:
             if self.active:
-                self.active_image.draw(display,x,y)
+                self.active_image.draw(display, x, y)
             else:
-                self.rest_image.draw(display,x,y)
+                self.rest_image.draw(display, x, y)

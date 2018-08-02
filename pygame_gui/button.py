@@ -1,14 +1,17 @@
-import pygame
-from pygame_gui.image import *
+# Ben-Ryder 2018
 
-class button:
-    def __init__(self,rest_image,hover_image):
-        self.rest_image = image(rest_image)
-        self.hover_image = image(hover_image)
+import pygame
+import pygame_gui.image
+
+
+class Button:
+    def __init__(self, rest_image, hover_image):
+        self.rest_image = pygame_gui.image(rest_image)
+        self.hover_image = pygame_gui.image(hover_image)
         self.rect = self.rest_image.image.get_rect()
         self.function = None
 
-    def set_function(self,function):
+    def set_function(self, function):
         self.function = function
 
     def mouse_over(self):
@@ -18,14 +21,14 @@ class button:
 
     def check_clicked(self):
         if self.mouse_over():
-            if self.function != None:
+            if self.function is not None:
                 self.function()
             return True
         return False
     
-    def draw(self,display,x,y):
-        self.rect[0],self.rect[1] = x,y
+    def draw(self, display, x, y):
+        self.rect[0], self.rect[1] = x, y
         if self.mouse_over():
-            self.hover_image.draw(display,x,y)
+            self.hover_image.draw(display, x, y)
         else:
-            self.rest_image.draw(display,x,y)
+            self.rest_image.draw(display, x, y)

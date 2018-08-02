@@ -1,9 +1,12 @@
-# cursor object
+# Ben-Ryder 2018
+
 import pygame
-class cursor:
-    def __init__(self, imageRef):
+
+
+class Cursor:
+    def __init__(self, imageref):
         pygame.mouse.set_visible(False)
-        self.image = pygame.image.load(imageRef).convert_alpha()
+        self.image = pygame.image.load(imageref).convert_alpha()
         
-    def draw(self,surface):
-        surface.blit(self.image,pygame.mouse.get_pos())
+    def draw(self, surface):
+        surface.blit(self.image, pygame.mouse.get_pos())
