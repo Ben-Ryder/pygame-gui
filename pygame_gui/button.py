@@ -1,14 +1,16 @@
-# Ben-Ryder 2018
+# Ben-Ryder 2019
 
 import pygame
 import pygame_gui.image
 
 
 class Button:
-    def __init__(self, rest_image, hover_image):
-        self.rest_image = pygame_gui.Image(rest_image)
-        self.hover_image = pygame_gui.Image(hover_image)
+    def __init__(self, rest_image, hover_image, x, y):
+        self.rest_image = pygame_gui.Image(rest_image, x, y)
+        self.hover_image = pygame_gui.Image(hover_image, x, y)
         self.rect = self.rest_image.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
         self.function = None
 
     def set_function(self, function):
@@ -26,9 +28,8 @@ class Button:
             return True
         return False
     
-    def draw(self, display, x, y):
-        self.rect[0], self.rect[1] = x, y
+    def draw(self, display):
         if self.mouse_over():
-            self.hover_image.draw(display, x, y)
+            self.hover_image.draw(display)
         else:
-            self.rest_image.draw(display, x, y)
+            self.rest_image.draw(display)
